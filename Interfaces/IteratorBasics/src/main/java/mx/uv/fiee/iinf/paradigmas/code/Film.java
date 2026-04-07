@@ -11,4 +11,8 @@ public class Film {
         this.year = year;
     }
 
+    @Override
+    public String toString() {
+        return  "Film{" + "title=" + title + ", year=" + year + '}';
+    }
 }
