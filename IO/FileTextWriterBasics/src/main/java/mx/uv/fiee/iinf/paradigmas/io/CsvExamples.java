@@ -73,7 +73,7 @@ public final class CsvExamples {
         try (OutputStream outputStream = Files.newOutputStream(
                 file,
                 StandardOpenOption.CREATE,
-                StandardOpenOption.TRUNCATE_EXISTING,
+                StandardOpenOption.APPEND,
                 StandardOpenOption.WRITE);
              Writer writer = new OutputStreamWriter(outputStream, StandardCharsets.UTF_8)) {
             writer.write(CsvSupport.header());
