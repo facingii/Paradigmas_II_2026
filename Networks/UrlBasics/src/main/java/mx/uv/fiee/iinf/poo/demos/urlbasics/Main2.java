@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
@@ -16,6 +17,7 @@ import java.net.http.HttpResponse;
 public class Main2
 {
     static String uri = "https://lipsum.app/id/24/1600x900";
+    static BufferedImage image1;
 
     public static void main (String [] args) throws MalformedURLException, URISyntaxException {
         JFrame frame = new JFrame ();
@@ -33,8 +35,9 @@ public class Main2
         btnSync.addActionListener (v -> {
             try {
                 Graphics2D graphics = (Graphics2D) panel.getGraphics ();
-                BufferedImage image = ImageIO.read (new URL (uri));
-                graphics.drawImage (image, 0, 0, panel.getWidth (), panel.getHeight (), null);
+                image1 = ImageIO.read (new URL (uri));
+                ImageIO.write (image1, "jpg", new File("downloaded_image.jpg"));
+                graphics.drawImage (image1, 0, 0, panel.getWidth (), panel.getHeight (), null);
                 graphics.dispose ();
             } catch (IOException e) {
                 e.printStackTrace ();
@@ -66,11 +69,13 @@ public class Main2
                     });
         });
 
+
+        var postUri = "https://c5b3a16eb0cb4d988d2762238760b2dc.api.mockbin.io/";
         JButton btnSend = new JButton ("Send Image to Server");
         btnSend.addActionListener (v -> {
             try {
-                HttpRequest postRequest = HttpRequest.newBuilder(new URL(uri).toURI ())
-                        .POST (HttpRequest.BodyPublishers.noBody())
+                HttpRequest postRequest = HttpRequest.newBuilder(new URL(postUri).toURI ())
+                        .POST (HttpRequest.BodyPublishers.ofFile(new File("downloaded_image.jpg").toPath ()))
                         .build ();
 
                 client.sendAsync(postRequest, HttpResponse.BodyHandlers.ofString ())
