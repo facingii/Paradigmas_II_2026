@@ -50,3 +50,41 @@
    - **19.1 Objective:** Java/Maven example comparing multiple Java APIs to read text/CSV files from disk.
 20. FileTextWriterBasics (`IO\FileTextWriterBasics`)
    - **20.1 Objective:** Java/Maven example generating CSV files with several `OutputStream`-based writing approaches.
+
+### Networks
+21. HttpPostExample (`Networks\HttpPostExample`)
+   - **21.1 Objective:** Java/Maven example sending URL-encoded POST data from a desktop UI through a simple HTTP helper.
+22. RMIInvocations (`Networks\RMIInvocations`)
+   - **22.1 Objective:** Java/Maven example exposing a remote calculus service with Java RMI and separate client/server applications.
+23. SerializedOverNetwork (`Networks\SerializedOverNetwork`)
+   - **23.1 Objective:** Java/Maven example serializing `Persona` objects and streaming them over sockets between sender and receiver.
+24. ClientSocketV1 (`Networks\Sockets\ClientSocketV1`)
+   - **24.1 Objective:** Java/Maven example opening a basic client socket and sending a single UTF message to a server.
+25. ClientSocketV2 (`Networks\Sockets\ClientSocketV2`)
+   - **25.1 Objective:** Java/Maven example building an interactive socket client that exchanges messages and files with a server.
+26. ServerSocketV1 (`Networks\Sockets\ServerSocketV1`)
+   - **26.1 Objective:** Java/Maven example opening a basic server socket and receiving a single UTF message from a client.
+27. ServerSocketV2 (`Networks\Sockets\ServerSocketV2`)
+   - **27.1 Objective:** Java/Maven example building an interactive server socket that exchanges messages and files with one client.
+28. UrlBasics (`Networks\UrlBasics`)
+   - **28.1 Objective:** Java/Maven example exploring `URL`, `URLConnection`, Java `HttpClient`, and OkHttp to inspect and download web resources.
+
+### Threads
+29. ExecutorCallable (`Threads\ExecutorCallable`)
+   - **29.1 Objective:** Java/Maven example submitting `Callable` tasks to an executor and retrieving asynchronous results with `Future`.
+30. ExecutorsBasics (`Threads\ExecutorsBasics`)
+   - **30.1 Objective:** Java/Maven example introducing executor services with fixed, single, and scheduled thread pools.
+31. RecursiveActionDemo (`Threads\RecursiveActionDemo`)
+   - **31.1 Objective:** Java/Maven example using `ForkJoinPool` and `RecursiveAction` to transform large arrays in parallel.
+32. RecursiveTaskDemo (`Threads\RecursiveTaskDemo`)
+   - **32.1 Objective:** Java/Maven example using `ForkJoinPool` and `RecursiveTask` to count array values in parallel.
+33. SemaphoreDemo (`Threads\SemaphoreDemo`)
+   - **33.1 Objective:** Java/Maven example coordinating shared-state access across threads with binary and counting semaphores.
+34. SyncThreads (`Threads\SyncThreads`)
+   - **34.1 Objective:** Java/Maven example synchronizing concurrent access to shared state with synchronized methods and blocks.
+35. ThreadsBasics (`Threads\ThreadsBasics`)
+   - **35.1 Objective:** Java/Maven example introducing `Runnable`, `Thread`, `start`, `sleep`, and `join` for basic multithreading.
+
+### Web
+36. AdventureWorksClient (`Web\AdventureWorksClient`)
+   - **36.1 Objective:** Spring Boot/Maven example exposing product-related REST endpoints with controllers, DTOs, and a service layer.
